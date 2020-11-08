@@ -37,9 +37,12 @@ externalDatabase:
 ##
 ## MariaDB chart configuration
 ##
+
+externalDatabase:
+  host: bookstack-mariadb
 mariadb:
   ## Whether to deploy a mariadb server to satisfy the applications database requirements. To use an external database set this to false and configure the externalDatabase parameters
-  enabled: true
+  enabled: false
 
   ## Disable MariaDB replication
   replication:
@@ -133,10 +136,10 @@ persistence:
     size: 8Gi
 
 ingress:
-  enabled: false
+  enabled: true
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+     kubernetes.io/ingress.class: nginx
+     kubernetes.io/tls-acme: "true"
   path: /
   hosts:
     - bookstack-example.local

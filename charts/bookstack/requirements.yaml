@@ -1,5 +1,0 @@
-dependencies:
-- name: mariadb
-  version: 4.4.x
-  repository: https://github.com/DeadpoolPancakes/publichelmcharts
-  condition: mariadb.enabled
